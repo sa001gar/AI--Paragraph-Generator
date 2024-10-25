@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h1 class="text-2xl font-bold mb-6">Your Generated Content</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h2 class="font-semibold text-blue-800">Daily Stats</h2>
+                    <p class="text-blue-600">Remaining requests: {{ remaining_requests }}/50</p>
+                    <p class="text-blue-600">Total generations: {{ total_generations }}</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                {% for content in user_content %}
+                <div class="border rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold">{{ content.topic }}</h3>
+                        <span class="text-sm text-gray-500">{{ content.created_at|date:"M d, Y H:i" }}</span>
+                    </div>
+                    <p class="text-gray-700 mb-2">{{ content.content }}</p>
+                    <div class="text-sm text-gray-500">
+                        <p>Grade Level: {{ content.grade_level }}</p>
+                        <p>Style: {{ content.style }}</p>
+                        <p>Tone: {{ content.tone }}</p>
+                        <p>Word Count: {{ content.word_count }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-gray-500">No content generated yet.</p>
+                {% endfor %}
+            </div>
+            <a href="{% url 'generate_paragraph' %}" class="block mt-6 text-blue-600 hover:text-blue-500">Generate more content</a>
+        </div>
+    </div>
+</body>
+</html>

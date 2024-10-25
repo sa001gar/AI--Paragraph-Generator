@@ -1,0 +1,69 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/auth/signup.css' %}"> <!-- Link to your custom CSS -->
+</head>
+<body>
+    <div class="container">
+        <div class="signup-card">
+            <h2 class="header">Create Account</h2>
+            
+            <form method="post" class="form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" required>
+                    {% if form.username.errors %}
+                    <p class="error-message">{{ form.username.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                    {% if form.email.errors %}
+                    <p class="error-message">{{ form.email.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="password1">Password</label>
+                    <input type="password" name="password1" required>
+                    {% if form.password1.errors %}
+                    <p class="error-message">{{ form.password1.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2" required>
+                    {% if form.password2.errors %}
+                    <p class="error-message">{{ form.password2.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                {% if form.non_field_errors %}
+                <div class="error-message">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <button type="submit" class="submit-button">Sign Up</button>
+            </form>
+            
+            <div class="login-prompt">
+                <p>Already have an account? 
+                    <a href="{% url 'login' %}" class="login-link">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
