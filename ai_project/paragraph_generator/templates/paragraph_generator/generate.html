@@ -93,9 +93,9 @@
                         $('#result').html(` 
                             <div class="result-success">
                                 <h3>Generated Paragraph:</h3>
-                                <p>${response.content}</p>
-                                <p>Word count: ${response.word_count}</p>
-                                <p>Remaining requests: ${response.remaining_requests}</p>
+                                <p class="generated-text">${response.content}</p>
+                                <p class="word-count">Word count: <span>${response.word_count}</span></p>
+                                <p class="remaining-requests">Remaining requests: <span>${response.remaining_requests}</span></p>
                             </div>
                         `);
                         $('#remainingRequests').text(response.remaining_requests);

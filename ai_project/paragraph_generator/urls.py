@@ -7,10 +7,10 @@ urlpatterns = [
     # Authentication URLs
     path('login/', views.CustomLoginView.as_view(), name='login'),
     path('signup/', views.signup_view, name='signup'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
+    path('logout/', views.user_logout, name='logout'),
 
     # Application URLs
-    path('', RedirectView.as_view(url='/dashboard/')),  # Redirect root to dashboard
+    path('', views.index,name='index'),  # Welcome p
     path('dashboard/', views.dashboard, name='dashboard'),
     path('generate/', views.generate_paragraph, name='generate_paragraph'),
 ]

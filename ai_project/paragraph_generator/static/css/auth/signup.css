@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f7fafc; /* Very light gray background */
@@ -12,15 +13,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Full viewport height */
+    padding: 1rem; /* Ensure padding on mobile */
 }
 
 /* Container styles */
 .container {
     width: 100%;
     max-width: 450px; /* Fixed max width for the card */
-    padding: 20px;
-    margin: auto; /* Centering container */
 }
 
 /* Card styles */
@@ -31,13 +31,38 @@ body {
     padding: 2rem;
 }
 
-/* Header styles */
-.header {
-    font-size: 1.75rem; /* Font size for the header */
+/* Application name styles */
+.app-name {
+    font-size: 2rem; /* Larger font for the application name */
     font-weight: bold;
     color: #4c51bf; /* Indigo color */
-    margin-bottom: 1.5rem;
     text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Header styles */
+.header {
+    font-size: 1.5rem; /* Font size for the header */
+    font-weight: bold;
+    color: #4c51bf; /* Indigo color */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Help message styles */
+.help-message {
+    font-size: 0.9rem;
+    color: #4a5568; /* Darker gray for help text */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Password policy styles */
+.password-policy {
+    list-style-type: none; /* Remove bullet points */
+    font-size: 0.9rem; /* Smaller font size */
+    color: #4a5568; /* Darker gray for policy text */
+    margin-top: 0.5rem; /* Space above the list */
 }
 
 /* Form styles */
@@ -70,6 +95,13 @@ body {
     border-color: #4c51bf; /* Indigo color */
 }
 
+/* Password strength feedback */
+.password-strength {
+    margin-top: 0.5rem;
+    font-size: 0.9rem; /* Size for password strength feedback */
+    color: #e53e3e; /* Default to red for weak passwords */
+}
+
 /* Button styles */
 .submit-button {
     padding: 0.75rem;
@@ -96,6 +128,7 @@ body {
     color: #4c51bf; /* Indigo color */
     font-weight: bold;
 }
+
 .login-link:hover {
     text-decoration: underline;
 }
@@ -104,4 +137,50 @@ body {
 .error-message {
     color: #e53e3e; /* Red color */
     font-size: 0.9rem; /* Slightly smaller font for errors */
+}
+
+/* Error input styles */
+.error {
+    border: 2px solid #e53e3e; /* Red color for error */
+    outline: none; /* Remove default outline */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .signup-card {
+        padding: 1.5rem;
+    }
+
+    .app-name {
+        font-size: 2rem; /* Larger font for mobile */
+    }
+
+    .header {
+        font-size: 1.6rem; /* Larger header for mobile */
+    }
+
+    .help-message,
+    .password-policy {
+        font-size: 1rem; /* Larger help and policy text for mobile */
+    }
+
+    .form-group label {
+        font-size: 1.1rem;
+    }
+
+    .form-group input {
+        font-size: 1.1rem;
+    }
+
+    .submit-button {
+        font-size: 1.1rem;
+    }
+
+    .error-message {
+        font-size: 1rem;
+    }
+
+    .password-strength {
+        font-size: 1rem; /* Larger feedback text for mobile */
+    }
 }

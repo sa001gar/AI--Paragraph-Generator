@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.views.decorators.http import require_http_methods
 from django.core.exceptions import ValidationError
 from django_ratelimit.decorators import ratelimit
-from django.contrib.auth import login
+from django.contrib.auth import login , logout
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
 
@@ -22,6 +22,9 @@ load_dotenv()
 class CustomLoginView(LoginView):
     template_name = 'auth/login.html'
     redirect_authenticated_user = True
+def index(request):
+
+    return render(request, 'paragraph_generator/index.html')
 
 def signup_view(request):
     if request.user.is_authenticated:
@@ -166,3 +169,10 @@ def dashboard(request):
         'total_generations': user_content.count()
     }
     return render(request, 'paragraph_generator/dashboard.html', context)
+
+
+@login_required
+def user_logout(request):
+    # Logging out the user
+    logout(request)
+    return redirect('index')

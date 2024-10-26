@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    accent-color: #4cbf65; /* Indigo color */
+    accent-color: #4c51bf; /* Indigo color */
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f7fafc; /* Very light gray background */
     color: #333;
     font-size: 16px; /* Base font size */
@@ -15,7 +15,7 @@ body {
 
 /* Container styles */
 .container {
-    max-width: 90%; /* Use a percentage for responsiveness */
+    max-width: 888px; /* Use a percentage for responsiveness */
     margin: 2rem auto;
     padding: 1rem;
 }
@@ -30,7 +30,7 @@ body {
 
 /* Header styles */
 .header {
-    font-size: 2rem; /* Base size */
+    font-size: 2.5rem; /* Larger size for modern look */
     font-weight: bold;
     color: #4c51bf; /* Indigo color */
     margin-bottom: 1rem;
@@ -56,30 +56,107 @@ body {
     margin-bottom: 0.5rem;
     font-weight: bold;
     color: #4a5568; /* Darker gray for labels */
-    font-size: 1rem; /* Base font size */
+    font-size: 1.2rem; /* Larger font size for labels */
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem; /* Increased padding for better touch */
     border: 1px solid #cbd5e0; /* Light gray */
     border-radius: 0.5rem; /* Use rem for consistency */
     font-size: 1rem; /* Base font size */
+    transition: border-color 0.3s ease;
 }
 
-/* Responsive Font Sizes */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4c51bf; /* Focus border color */
+}
+
+/* Button styles */
+.submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4c51bf; /* Indigo color */
+    color: white;
+    border: none;
+    border-radius: 0.5rem; /* Use rem for consistency */
+    font-size: 1.2rem; /* Larger button font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #434190; /* Darker indigo */
+}
+
+/* Result styles */
+.result {
+    margin-top: 1rem;
+}
+
+.result-success {
+    background-color: #e6fffa; /* Light teal */
+    border: 1px solid #b2f5ea; /* Light teal border */
+    border-radius: 0.5rem; /* Use rem for consistency */
+    padding: 1rem;
+    font-size: 1.1rem; /* Slightly larger font size for results */
+}
+
+.result-error {
+    background-color: #fff5f5; /* Light red */
+    border: 1px solid #fed7e2; /* Light red border */
+    border-radius: 0.5rem; /* Use rem for consistency */
+    padding: 1rem;
+    color: #e53e3e; /* Red color */
+}
+
+/* Word count and remaining requests styles */
+.word-count, .remaining-requests {
+    font-size: 1.1rem; /* Larger size for visibility */
+    font-weight: bold;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #2d3748; /* Dark gray */
+    color: white;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 0.9rem; /* Make footer content font smaller */
+}
+
+.footer-content a {
+    color: #a0aec0; /* Light gray */
+    text-decoration: none;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
     body {
         font-size: 14px; /* Slightly smaller base font size */
     }
 
     .header {
-        font-size: 1.75rem; /* Smaller size on medium screens */
+        font-size: 2rem; /* Smaller size on medium screens */
     }
 
     .form-group label {
-        font-size: 0.9rem; /* Smaller size for labels */
+        font-size: 1rem; /* Smaller size for labels */
     }
 
     .form-group input,
@@ -153,74 +230,4 @@ body {
     .container {
         width: 97%; /* Adjust container width */
     } 
-}
-
-/* Button styles */
-.submit-button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #4c51bf; /* Indigo color */
-    color: white;
-    border: none;
-    border-radius: 0.5rem; /* Use rem for consistency */
-    font-size: 1.1rem; /* Base font size */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #434190; /* Darker indigo */
-}
-
-/* Result styles */
-.result {
-    margin-top: 1rem;
-}
-
-.result-success {
-    background-color: #f0fff4; /* Light green */
-    border: 1px solid #c6f6d5; /* Light green border */
-    border-radius: 0.5rem; /* Use rem for consistency */
-    padding: 1rem;
-}
-
-.result-error {
-    background-color: #fff5f5; /* Light red */
-    border: 1px solid #fed7e2; /* Light red border */
-    border-radius: 0.5rem; /* Use rem for consistency */
-    padding: 1rem;
-    color: #e53e3e; /* Red color */
-}
-
-/* Footer styles */
-.footer {
-    background-color: #2d3748; /* Dark gray */
-    color: white;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-.footer-content {
-    text-align: center;
-    font-size: 0.9rem; /* Make footer content font smaller */
-}
-
-.footer-content a {
-    color: #a0aec0; /* Light gray */
-    text-decoration: none;
-}
-
-.footer-content p{
-    margin: 0.5rem 0;
-}
-
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-
-.form-group input:focus,select:focus {
-    outline: none;
-    border-color: #4c51bf; /* blue color */
 }
