@@ -47,6 +47,9 @@ body {
 }
 
 /* Form styles */
+form{
+    margin-top: 1rem;
+}
 .form-group {
     margin-bottom: 1rem;
 }
@@ -105,6 +108,26 @@ body {
     font-size: 1.1rem; /* Slightly larger font size for results */
 }
 
+
+.result-success>h3{
+    margin: 0.5rem 0;
+    margin-bottom: 5px;
+}
+
+.word-count {
+    color: #4b4d50; /* Blue color */
+    font-size:0.7rem;
+    /* color:#4c51bf; */
+    margin-top:1rem;
+}
+
+.remaining-requests {
+    color: #4b4d50; /* Blue color */
+    font-size:0.7rem;
+    /* color:#4c51bf; */
+    /* margin-top:1rem; */
+}
+
 .result-error {
     background-color: #fff5f5; /* Light red */
     border: 1px solid #fed7e2; /* Light red border */
@@ -143,6 +166,32 @@ body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+
+/* Link styles */
+.back-link, .logout-link, .Dashboard {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #4c51bf; /* Indigo color */
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem; /* Use rem for consistency */
+    font-size: 1rem; /* Base font size */
+    transition: background-color 0.3s ease;
+}
+
+.logout-link {
+    background-color: #e53e3e; /* Red color */
+}
+
+.logout-link:hover {
+    background-color: #c53030; /* Darker red */
+}
+
+.back-link:hover, .Dashboard:hover {
+    background-color: #434190; /* Darker indigo */
 }
 
 /* Responsive styles */
@@ -230,4 +279,14 @@ body {
     .container {
         width: 97%; /* Adjust container width */
     } 
+
+    .word-count, .remaining-requests {
+        font-size: 0.7rem; /* Smaller size for visibility */
+    }
+
+    .back-link, .logout-link, .Dashboard {
+        font-size: 0.7rem; /* Smaller font size for mobile */
+        padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
+        margin: 0.2rem; /* Reduce margin for mobile */
+    }
 }

@@ -11,11 +11,14 @@
 <body>
     <div class="container">
         <div class="card">
-            <h1 class="header">Paragraph Generator</h1>
-            
+            <h1 class="header">AI Paragraph Generator</h1>
             <div class="requests-info">
                 <p>Remaining requests today: <span id="remainingRequests" class="highlight">{{ remaining_requests }}</span></p>
             </div>
+            <a href="{% url 'index' %}" class="back-link">Back to Home</a>
+            <a href="{% url 'dashboard' %}" class="Dashboard">Dashboard</a>
+            <a href="/logout" class="logout-link">Logout</a>
+            
             
             <form id="generateForm">
                 <div class="form-group">

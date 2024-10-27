@@ -100,7 +100,7 @@ def generate_paragraph(request):
         
         # Make the API call
         client = openai.OpenAI(
-  api_key="959488a76064ac941850582a89ce1a6637a67fc3fb0f95aeb531732505a66bb8",
+  api_key=os.environ.get("TOGETHER_API_KEY"),
   base_url="https://api.together.xyz/v1",
 )
         # response = client.chat.completions.create(
